@@ -7,6 +7,7 @@ const pricePerKm = 0.21;
 let kmToCommute = prompt("Inserisci il numero di Km da percorrere");
 
 if(isNaN(kmToCommute)){
+    console.log("valore non valido");
     alert("Inserisci un numero per favore");
 } else {
     kmToCommute = Number(kmToCommute);
@@ -25,6 +26,7 @@ if(isNaN(kmToCommute)){
 
     // price applied for minor and elderly people
     if(age < 14 || age > 100){
+        console.log("valore non valido");
         alert("inserisci un numero di età valido");
     } else if (age >= 14 && age <= 18){
         minorAgeDiscout = ticketPrice - ((ticketPrice * 20) / 100);
