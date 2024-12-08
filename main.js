@@ -10,33 +10,35 @@ if(isNaN(kmToCommute)){
     alert("Inserisci un numero per favore");
 } else {
     kmToCommute = Number(kmToCommute);
-    console.log(kmToCommute);
+    console.log("Km da percorrere: ",kmToCommute);
     ticketPrice = pricePerKm * kmToCommute;
-    console.log(ticketPrice);
-    // let age = prompt("Inserisci la tua età");
-}
+    console.log("Prezzo del biglietto: ",ticketPrice);
+    
+    let age = prompt("Inserisci la tua età");
 
-let age = prompt("Inserisci la tua età");
+    if(isNaN(age)){
+        alert("Inserisci un numero per favore");
+    } else {
+        age = Number(age);
+        console.log("età: ",age);
+    }
 
-if(isNaN(age)){
-    alert("Inserisci un numero per favore");
-} else {
-    age = Number(age);
-    console.log(age);
-}
-
-// price applied for minor and elderly people
-if(age < 14 || age > 100){
-    alert("inserisci un numero di età valido");
-} else if (age >= 14 && age <= 18){
-    minorAgeDiscout = ticketPrice - ((ticketPrice * 20) / 100);
-    finalPrice = minorAgeDiscout.toFixed(2).replace(".",",");
-    alert(`Il prezzo finale è di € ${finalPrice}`);
-} else if(age >= 65 && age <= 100){
-    elderAgeDiscount = ticketPrice - ((ticketPrice * 40) / 100);
-    finalPrice = elderAgeDiscount.toFixed(2).replace(".",",");
-    alert(`Il prezzo finale è di € ${finalPrice}`);
-} else {
-    finalPrice = ticketPrice.toFixed(2).replace(".",",");
-    alert(`Il prezzo finale è di € ${finalPrice}`);
+    // price applied for minor and elderly people
+    if(age < 14 || age > 100){
+        alert("inserisci un numero di età valido");
+    } else if (age >= 14 && age <= 18){
+        minorAgeDiscout = ticketPrice - ((ticketPrice * 20) / 100);
+        finalPrice = minorAgeDiscout.toFixed(2).replace(".",",");
+        console.log((`Il prezzo finale è di € ${finalPrice}`));
+        alert(`Il prezzo finale è di € ${finalPrice}`);
+    } else if(age >= 65 && age <= 100){
+        elderAgeDiscount = ticketPrice - ((ticketPrice * 40) / 100);
+        finalPrice = elderAgeDiscount.toFixed(2).replace(".",",");
+        console.log((`Il prezzo finale è di € ${finalPrice}`));
+        alert(`Il prezzo finale è di € ${finalPrice}`);
+    } else {
+        finalPrice = ticketPrice.toFixed(2).replace(".",",");
+        console.log((`Il prezzo finale è di € ${finalPrice}`));
+        alert(`Il prezzo finale è di € ${finalPrice}`);
+    }
 }
